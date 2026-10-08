@@ -1,0 +1,20 @@
+# Dependencias y artefactos
+node_modules/
+dist/
+.angular/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Datos y secretos
+instance/
+*.sqlite3
+*.sqlite3-*
+.env
+.env.*
+!.env.example
+# Editor y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
