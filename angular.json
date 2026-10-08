@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "projects": {
+    "frontend": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.json",
+            "styles": [
+              "src/styles.css"
+            ],
+            "outputPath": "dist/frontend"
+          },
+          "configurations": {
+            "development": {"optimization":false,"sourceMap":true},
+          "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kB",
+                  "maximumError": "1MB"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "frontend:build:development"
+          }
+        }
+      }
+    }
+  }
+}
